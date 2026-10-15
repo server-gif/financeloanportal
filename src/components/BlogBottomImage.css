@@ -1,0 +1,130 @@
+.blog-bottom-image {
+  width: 100%;
+  max-width: 100%;
+  margin: 32px 0 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blog-bottom-image img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+/* Ensure both image and poster ad are inside blog container */
+.blog-section .blog-bottom-image,
+.blog-section .blog-ad-frame--poster {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Poster GAM creative keeps its real dimensions and participates in normal flow. */
+.blog-ad-frame--poster {
+  position: relative;
+  width: min(300px, 100%);
+  max-width: 100%;
+  height: auto;
+  min-height: 18px;
+  margin: 0 auto 24px;
+  box-sizing: border-box;
+  aspect-ratio: auto;
+  background: transparent;
+  border-radius: 0;
+  overflow: visible;
+}
+
+.blog-ad-frame--poster .blog-normal-ad,
+.blog-ad-frame--poster .ad-unit-wrapper {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  min-height: 18px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-ad-frame--poster .ad-unit {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-ad-frame--poster .ad-unit > div {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-ad-frame--poster .ad-unit iframe {
+  max-width: 100%;
+  max-height: none;
+  display: block;
+  border: 0;
+}
+
+.blog-ad-frame--poster .blog-normal-ad.is-filled,
+.blog-ad-frame--poster .blog-normal-ad.is-filled .ad-unit {
+  min-height: var(--ad-rendered-height);
+}
+
+.blog-ad-frame--poster .blog-normal-ad.is-filled .ad-unit > div,
+.blog-ad-frame--poster .blog-normal-ad.is-filled .ad-unit iframe {
+  width: var(--ad-rendered-width) !important;
+  height: var(--ad-rendered-height) !important;
+  max-width: none !important;
+  max-height: none !important;
+}
+
+/* ADVERTISEMENT label for loading/no-fill state */
+.blog-ad-frame--poster .ad-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .blog-bottom-image {
+    margin: 24px 0 20px;
+  }
+
+  .blog-bottom-image img {
+    border-radius: 8px;
+  }
+
+  .blog-ad-frame--poster {
+    margin: 0 0 20px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-bottom-image {
+    margin: 20px 0 16px;
+  }
+
+  .blog-bottom-image img {
+    border-radius: 6px;
+  }
+
+  .blog-ad-frame--poster {
+    margin: 0 0 16px;
+    border-radius: 6px;
+  }
+}
